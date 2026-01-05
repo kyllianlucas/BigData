@@ -1,2 +1,5 @@
-bigdata/
-airflow-docker/
+data/
+__pycache__/
+plugins/
+logs/
+config/
