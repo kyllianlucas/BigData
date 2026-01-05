@@ -16,20 +16,7 @@ Stocker le fichier dans un dossier data
 
 Les données sont brutes et non modifiées après ingestion.
 
-Structure du projet
-BigData/
-└── script/
-    └── bigdata/
-        ├── getApi.py
-        ├── data/
-        │   └── data_raw_100.csv
-        ├── Include/
-        ├── Lib/
-        ├── Scripts/
-        └── .gitignore
-
-
-getApi.py : script Python qui appelle l’API
+get_api.py : script Python qui appelle l’API
 
 data/ : dossier de sortie des données
 
@@ -51,10 +38,10 @@ Lancer le script Python
 Sous Windows : CMD, PowerShell ou terminal VS Code
 
 2️⃣ Se placer dans le dossier du script
-cd script/bigdata
+cd airflow-docker/dags
 
 3️⃣ Lancer le script
-python getApi.py
+python dag_hebdo.py
 
 Résultat attendu
 
