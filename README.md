@@ -3,6 +3,7 @@
 ## 🎓 Contexte académique
 
 Ce projet a été réalisé dans le cadre d’un **projet Big Data scolaire** avec Ouissal MASBAHI.  
+
 Il vise à mettre en pratique les notions suivantes :
 
 - Consommation d’une **API externe**
