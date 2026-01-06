@@ -37,6 +37,12 @@ Les objectifs principaux sont :
 ```bash
 cd chemin/vers/votre/dossier
 
+```
+
+### 3️⃣ Cloner le git
+
+```bash
+
 git clone https://github.com/kyllianlucas/BigData.git
 
 cd BigData
@@ -48,19 +54,19 @@ cd BigData
 
 📄 Description des fichiers
 
-get_api.py
+get_api.py :
 Script Python chargé d’appeler l’API data.gouv.fr et de récupérer les données.
 
-dag_hebdo.py
+dag_hebdo.py :
 DAG Apache Airflow permettant d’automatiser l’exécution du script de récupération.
 
-docker-compose.yaml
+docker-compose.yaml :
 Fichier de configuration Docker permettant de déployer Airflow.
 
-data/
+data/ :
 Dossier de sortie contenant les données brutes.
 
-data_raw_100.csv
+data_raw_100.csv :
 Fichier CSV généré automatiquement contenant 100 lignes de données brutes.
 
 ⚙️ Prérequis
@@ -161,18 +167,31 @@ Lancer Spark :spark-shell
 
 ```
 
+en cas de non lancement de spark faire les commandes qui suivent en recommançant la manipulation precedante sauf la derniere commande ou il faut les passez juste avant
+
+```bash
+start-dfs.sh
+start-yarn.sh
+```
+
 Rapport
 
-
+### 1️⃣ Afficher toutes les données des 5 premières lignes
 ![alt text](image/rapport1.png)
+
+### 2️⃣ Vérifiacations du nombres de lignes dans le fichier
 
 ![alt text](image/rapport2.png)
 
+### 3️⃣ Vérifications des lignes vides
+
 ![alt text](image/rapport3.png)
+
+### 4️⃣ Vérifications des doublons
 
 ![alt text](image/rapport4.png)
 
-on ne peux pas normaliser car a la creation du fichier tous tiens sur une ligne 
+### 5️⃣ On ne peux pas normaliser car a la creation du fichier tous tiens sur une ligne 
 
 ![alt text](image/rapport5.png)
 
