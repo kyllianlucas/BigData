@@ -2,7 +2,7 @@
 
 ## 🎓 Contexte académique
 
-Ce projet a été réalisé dans le cadre d’un **projet Big Data scolaire**.  
+Ce projet a été réalisé dans le cadre d’un **projet Big Data scolaire** avec Ouissal MASBAHI.  
 Il vise à mettre en pratique les notions suivantes :
 
 - Consommation d’une **API externe**
@@ -43,23 +43,8 @@ cd BigData
 
 ```
 🗂️ Structure du projet
-BIGDATA/
-├── airflow-docker/
-│   ├── config/
-│   ├── dags/
-│   │   ├── __pycache__/
-│   │   ├── data/
-│   │   ├── dag_hebdo.py
-│   │   └── get_api.py
-│   ├── logs/
-│   ├── plugins/
-│   ├── .env
-│   └── docker-compose.yaml
-├── data/
-│   └── data_raw_100.csv
-├── .gitignore
-├── image.png
-└── README.md
+
+![alt text](image/structure.png)
 
 📄 Description des fichiers
 
@@ -159,7 +144,7 @@ https://tabular-api.data.gouv.fr/api/resources/1c5075ec-7ce1-49cb-ab89-94f507812
 
 🖼️ Illustration
 
-![alt text](image.png)
+![alt text](image/dag.png)
 
 Acces a spark et hadoop
 
@@ -179,17 +164,17 @@ Lancer Spark :spark-shell
 Rapport
 
 
-![alt text](image-1.png)
+![alt text](image/rapport1.png)
 
-![alt text](image-2.png)
+![alt text](image/rapport2.png)
 
-![alt text](image-3.png)
+![alt text](image/rapport3.png)
 
-![alt text](image-4.png)
+![alt text](image/rapport4.png)
 
 on ne peux pas normaliser car a la creation du fichier tous tiens sur une ligne 
 
-![alt text](image-5.png)
+![alt text](image/rapport5.png)
 
 🧠 Conclusion
 
@@ -204,4 +189,3 @@ L’automatisation avec Apache Airflow
 L’utilisation de Docker pour des environnements reproductibles
 
 Il constitue une base solide pour des traitements Big Data plus avancés.
-
