@@ -1,68 +1,207 @@
-BigData
+# 📊 Projet Big Data – Ingestion de données via API (Airflow & Docker)
 
-Projet Big Data – École
+## 🎓 Contexte académique
 
-Objectif
+Ce projet a été réalisé dans le cadre d’un **projet Big Data scolaire**.  
+Il vise à mettre en pratique les notions suivantes :
 
-Ce projet a pour but de :
+- Consommation d’une **API externe**
+- Ingestion de **données brutes**
+- Automatisation via **Apache Airflow**
+- Conteneurisation avec **Docker**
+- Génération et stockage de données au format **CSV**
 
-Consommer une API externe (data.gouv.fr)
+---
 
-Récupérer des données brutes
+## 🎯 Objectif du projet
 
-Générer un fichier CSV
+Les objectifs principaux sont :
 
-Stocker le fichier dans un dossier data
+- Appeler une API publique (**data.gouv.fr**)
+- Récupérer des données tabulaires brutes
+- Générer un fichier CSV contenant **exactement 100 lignes**
+- Stocker ce fichier dans un dossier `data`
+- Ne réaliser **aucune transformation** des données après ingestion
 
-Les données sont brutes et non modifiées après ingestion.
+---
 
-get_api.py : script Python qui appelle l’API
+## 📥 Cloner le dépôt Git
 
-data/ : dossier de sortie des données
+### 1️⃣ Ouvrir un terminal
 
-data_raw_100.csv : fichier CSV généré (100 lignes)
+- Windows : CMD, PowerShell ou terminal VS Code  
+- macOS / Linux : Terminal
 
-Prérequis
+### 2️⃣ Se placer dans le dossier de travail
 
-Python installé (version 3.x)
+```bash
+cd chemin/vers/votre/dossier
 
-Module Python requests
+git clone https://github.com/kyllianlucas/BigData.git
 
-Installation du module si nécessaire :
+cd BigData
 
+```
+🗂️ Structure du projet
+BIGDATA/
+├── airflow-docker/
+│   ├── config/
+│   ├── dags/
+│   │   ├── __pycache__/
+│   │   ├── data/
+│   │   ├── dag_hebdo.py
+│   │   └── get_api.py
+│   ├── logs/
+│   ├── plugins/
+│   ├── .env
+│   └── docker-compose.yaml
+├── data/
+│   └── data_raw_100.csv
+├── .gitignore
+├── image.png
+└── README.md
+
+📄 Description des fichiers
+
+get_api.py
+Script Python chargé d’appeler l’API data.gouv.fr et de récupérer les données.
+
+dag_hebdo.py
+DAG Apache Airflow permettant d’automatiser l’exécution du script de récupération.
+
+docker-compose.yaml
+Fichier de configuration Docker permettant de déployer Airflow.
+
+data/
+Dossier de sortie contenant les données brutes.
+
+data_raw_100.csv
+Fichier CSV généré automatiquement contenant 100 lignes de données brutes.
+
+⚙️ Prérequis
+Logiciels requis
+
+Git
+
+Python 3.x
+
+Docker
+
+Docker Compose
+
+Modules Python
+
+requests
+
+Installation du module Python :
+
+```bash
 pip install requests
 
-Lancer le script Python
-1️⃣ Ouvrir un terminal
+```
 
-Sous Windows : CMD, PowerShell ou terminal VS Code
+Exécution sans Docker (Python uniquement)
 
-2️⃣ Se placer dans le dossier du script
+```bash
 cd airflow-docker/dags
 
-3️⃣ Lancer le script
 python dag_hebdo.py
 
-Résultat attendu
+```
 
-Après l’exécution du script :
+🐳 Exécution avec Docker & Airflow
 
-Un fichier est créé automatiquement :
+```bash
 
-script/bigdata/data/data_raw_100.csv
+cd airflow-docker
+
+docker-compose up -d
+```
+
+Accéder à l’interface Airflow
+
+Ouvrir un navigateur :
+
+http://localhost:8080
+
+dentifiants par défaut :
+
+Utilisateur : airflow
+
+Mot de passe : airflow
+
+4️⃣ Activer le DAG
+
+Activer le DAG dag_hebdo
+
+Lancer une exécution manuelle si nécessaire
+
+✅ Résultat attendu
+
+Après exécution :
+
+Un fichier est généré automatiquement :
+
+data/data_raw_100.csv
 
 
 Le fichier contient exactement 100 lignes
 
-Les données proviennent de l’API data.gouv.fr
+Les données sont issues de l’API data.gouv.fr
 
-Aucune transformation n’est appliquée (données brutes)
+Les données sont brutes, non transformées
 
-API utilisée
+🌐 API utilisée
 
-API tabulaire data.gouv.fr :
+API tabulaire officielle de data.gouv.fr :
 
 https://tabular-api.data.gouv.fr/api/resources/1c5075ec-7ce1-49cb-ab89-94f507812daf/data/
 
+🖼️ Illustration
 
 ![alt text](image.png)
+
+Acces a spark et hadoop
+
+```bash
+docker exec -it hadoop-master bash 
+
+docker start hadoop-master 
+docker start hadoop-worker1 
+docker start hadoop-worker2 
+Accéder au conteneur master :  
+docker exec -it hadoop-master bash 
+Vérifier que Spark est installé : spark-shell --version 
+Lancer Spark :spark-shell 
+
+```
+
+Rapport
+
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+on ne peux pas normaliser car a la creation du fichier tous tiens sur une ligne 
+
+![alt text](image-5.png)
+
+🧠 Conclusion
+
+Ce projet permet de démontrer :
+
+La capacité à consommer une API publique
+
+L’ingestion de données brutes en Big Data
+
+L’automatisation avec Apache Airflow
+
+L’utilisation de Docker pour des environnements reproductibles
+
+Il constitue une base solide pour des traitements Big Data plus avancés.
+
