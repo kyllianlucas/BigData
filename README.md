@@ -196,6 +196,23 @@ Rapport
 
 ![alt text](image/rapport5.png)
 
+SQL
+
+### 1️⃣ Requete 1 (Analyse vélo mécanique vs vélo électrique par commune)
+![alt text](sql/requete1.png)
+
+![alt text](sql/resultat1.png)
+
+### 2️⃣ Requete 2 Détection des stations « critiques » (presque pleines ou presque vides)
+![alt text](sql/requete2.png)
+
+![alt text](sql/resultat2.png)
+
+### 3️⃣ Requete 3 (Identifier les communes sous-dimensionnées)
+![alt text](sql/requete3.png)
+
+![alt text](sql/resultat3.png)
+
 🧠 Conclusion
 
 Ce projet permet de démontrer :
